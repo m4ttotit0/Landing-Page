@@ -42,3 +42,25 @@ body {
         border-color: #ff4b8b;
     }
 }
+
+/*Animación del fondo aka. un dolor de cabeza*/
+.grid-floor {
+    height: 50vh;
+    width: 100%;
+    background-image: 
+        linear-gradient(to right, rgba(0, 243, 255, 0.4) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 243, 255, 0.4) 1px, transparent 1px);
+    background-size: 40px 40px; 
+    transform: perspective(300px) rotateX(60deg);
+    transform-origin: top center;
+    animation: moveGrid 2s linear infinite;
+}
+
+@keyframes moveGrid {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 40px;
+    }
+}
