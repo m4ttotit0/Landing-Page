@@ -17,24 +17,28 @@ body {
 	background: linear-gradient(to bottom, #090314 0%, #1e103c 50%, #4a154b 75%, #ff4b8b 100%);
 }
 
-.grid-floor {
-	height: 50vh;
-	width: 100%;
-	background-image:
-		linear-gradient(to right, rgba(0, 243, 255, 0.4) 1px, transparent 1px),
-		linear-gradient(to bottom, rgba(0, 243, 255, 0.4) 1px, transparent 1px);
-	background-size: 40px 40px;
-	transform: perspective(300px) rotateX(60deg);
-	transform-origin: top center;
-	animation: moveGrid 2s linear infinite;
-
+.click-effect {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #00f3ff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: ondaAnimacion 0.6s linear forwards;
+    z-index: 999;
 }
 
-@keyframes moveGrid {
-	0% {
-		background-position: 0 0;
-	}
-	100% {
-		background-position: 0 40px;
-	}
+@keyframes ondaAnimacion {
+    0% {
+        width: 10px;
+        height: 10px;
+        opacity: 1;
+    }
+    100% {
+        width: 120px;
+        height: 120px;
+        opacity: 0;
+        border-color: #ff4b8b;
+    }
 }
