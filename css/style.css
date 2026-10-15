@@ -17,6 +17,30 @@ body {
     background: linear-gradient(to bottom, #090314 0%, #1e103c 50%, #4a154b 75%, #ff4b8b 100%);
 }
 
+/*Animación del fondo aka. un dolor de cabeza*/
+
+.grid-floor {
+    height: 50vh;
+    width: 100%;
+    background-image: 
+        linear-gradient(to right, rgba(0, 243, 255, 0.4) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 243, 255, 0.4) 1px, transparent 1px);
+    background-size: 40px 40px;
+    transform: perspective(300px) rotateX(60deg);
+    transform-origin: top center;
+    animation: moveGrid 2s linear infinite;
+}
+
+@keyframes moveGrid {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 40px;
+    }
+}
+
+/*Animacion click(?)*/
 .click-effect {
     position: fixed;
     width: 10px;
@@ -43,28 +67,34 @@ body {
     }
 }
 
-/*Animación del fondo aka. un dolor de cabeza*/
-.grid-floor {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 40vh;
-    width: 100%;
-    background-image: 
-        linear-gradient(to right, rgba(0, 243, 255, 0.8) 2px, transparent 2px),
-        linear-gradient(to bottom, rgba(0, 243, 255, 0.8) 2px, transparent 2px);
-    background-size: 50px 50px;
-    transform: perspective(300px) rotateX(60deg);
-    transform-origin: top center;
-    animation: moveGrid 2s linear infinite;
-    z-index: 10;
+
+/*Scroll animación*/
+.producto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*padding: 4rem 0;*/
 }
 
-@keyframes moveGrid {
+.audifonos-img {
+    width: 600px;
+    max-width: 100%;
+    height: auto;
+    transition: transform 1s ease-out;
+}
+
+/*Animacion de entrada*/
+@keyframes fadeInSlide {
     0% {
-        background-position: 0 0;
+        opacity: 0;
+        transform: translateY(40px);
     }
     100% {
-        background-position: 0 40px;
+        opacity: 1;
+        transform: translateY(0);
     }
+}
+
+.entrada-animada {
+    animation: fadeInSlide 2s ease-out forwards;
 }
