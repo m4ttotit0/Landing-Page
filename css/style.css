@@ -5,40 +5,124 @@ body {
     overflow-x: hidden;
 }
 
+/* Fondo retro */
 .retro-bg {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(to bottom, #090314 0%, #1e103c 50%, #4a154b 75%, #ff4b8b 100%);
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+
+    background: linear-gradient(
+        to bottom,
+        #090314 0%,
+        #1e103c 50%,
+        #4a154b 75%,
+        #ff4b8b 100%
+    );
 }
 
-/*Animación del fondo aka. un dolor de cabeza*/
+/* Sol: su borde inferior coincide con el horizonte */
+.retro-bg .sun {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    left: 50%;
+    top: calc(50vh - 320px);
 
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: linear-gradient(
+        to bottom,
+        #fff36b 0%,
+        #ffb52e 35%,
+        #ff7048 60%,
+        #c13b91 85%,
+        #642a91 100%
+    );
+    z-index: 1;
+}
+
+/* Cuadrícula en perspectiva */
 .grid-floor {
-    height: 50vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    background-image: 
-        linear-gradient(to right, rgba(0, 243, 255, 0.4) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(0, 243, 255, 0.4) 1px, transparent 1px);
+    height: 50vh;
+
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(0, 243, 255, 0.4) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            to bottom,
+            rgba(0, 243, 255, 0.4) 1px,
+            transparent 1px
+        );
+
     background-size: 40px 40px;
     transform: perspective(300px) rotateX(60deg);
     transform-origin: top center;
     animation: moveGrid 2s linear infinite;
+    z-index: 2;
+}
+
+/* Franjas horizontales del sol */
+.sun::after {
+    content: "";
+    position: absolute;
+    inset: 55% 0 0;
+
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 9px,
+        #160b35 9px,
+        #160b35 15px
+    );
+
+    animation: lineasSol 3s linear infinite;
+}
+
+@keyframes lineasSol {
+    0% {
+        background-position-y: 0;
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        background-position-y: 30px;
+        opacity: 0.4;
+    }
 }
 
 @keyframes moveGrid {
-    0% {
+    from {
         background-position: 0 0;
     }
-    100% {
+
+    to {
         background-position: 0 40px;
     }
 }
+
+/* Contenido por encima del fondo */
+body > h1,
+body > .producto {
+    position: relative;
+    z-index: 1;
+}
+
 
 /*Animacion click(?)*/
 .click-effect {
@@ -97,4 +181,11 @@ body {
 
 .entrada-animada {
     animation: fadeInSlide 2s ease-out forwards;
+}
+
+/* Contenido delante del fondo */
+body > h1,
+body > .producto {
+    position: relative;
+    z-index: 1;
 }
