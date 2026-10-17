@@ -1,30 +1,185 @@
 <!DOCTYPE html>
-<HTML lang="es">
+<html lang="es">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Audifonos AuriWave</title>
-	<script src="js/script.js"></script>
-	<link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audífonos AuriWave</title>
+    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-	<div class="retro-bg">
-		<div class="sun"></div>
-		<div class="grid-floor"></div> <!--suelo(?)-->
-	</div>
-	
-	<h1 style="color: white; font-family: sans-serif; text-align: center; margin-top: 20vh;">
-        Titulo zzzzzzz
-    </h1>
+    <div class="retro-bg">
+        <div class="sun"></div>
+        <div class="grid-floor"></div> <!--suelo(?)-->
+    </div>
 
-	<div class="producto entrada-animada">
-    	<img src="assets/imagenes/audifonos.png" alt="Audífonos AuriWave" id="rotacion" class="audifonos-img">
-	</div>
+    <header class="cabecera">
+        <a href="#inicio" class="marca">
+            auri<span>wave</span>
+        </a>
 
-	<h1 style="color: white; font-family: sans-serif; text-align: center; margin-top: 20vh;">
-        YAHOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-    </h1>
-	
+        <nav aria-label="Navegación principal">
+            <a href="#detalles">Características</a>
+        </nav>
+    </header>
 
+    <main>
+        <section class="presentacion" id="inicio">
+            <div class="titulo entrada-animada">
+                <p class="etiqueta">
+                    SONIDO DEL FUTURO · ALMA RETRO
+                </p>
+
+                <h1>
+                    Siente la<br>
+                    <span>frecuencia.</span>
+                </h1>
+            </div>
+
+            <aside class="oferta panel entrada-animada">
+                <p class="etiqueta">
+                    AURIWAVE / CYAN EDITION
+                </p>
+
+                <span class="sello">
+                    PRECIO DE LANZAMIENTO
+                </span>
+
+                <h2>
+                    Tu próxima<br>
+                    obsesión sonora.
+                </h2>
+
+                <p>
+                    Desconecta del ruido.<br>
+                    Conecta con tu música.
+                </p>
+
+                <div class="precio">
+                    <strong>$49.990</strong>
+                    <span>CLP</span>
+                </div>
+
+                <a href="#detalles" class="boton">
+					Los quiero ↗
+				</a>
+
+                <p class="nota">
+                    Diseñados para seguir tu ritmo.
+                </p>
+            </aside>
+
+            <div class="producto entrada-animada">
+                <img
+                    src="assets/imagenes/audifonos.png"
+                    alt="Audífonos AuriWave"
+                    id="rotacion"
+                    class="audifonos-img"
+                >
+            </div>
+
+            <section class="datos panel entrada-animada">
+                <p class="etiqueta">
+                    01 / CONECTA CON LO QUE SIENTES
+                </p>
+
+                <h2>
+                    Sin cables.<br>
+                    Sin límites.
+                </h2>
+
+                <dl>
+                    <div>
+                        <dt>30 h</dt>
+                        <dd>de música a tu ritmo</dd>
+                    </div>
+
+                    <div>
+                        <dt>Bluetooth</dt>
+                        <dd>Conexión inalámbrica</dd>
+                    </div>
+
+                    <div>
+                        <dt>USB-C</dt>
+                        <dd>Recarga y vuelve a conectar</dd>
+                    </div>
+                </dl>
+            </section>
+
+            <section class="informacion panel entrada-animada">
+                <p class="etiqueta">
+                    02 / TU PROPIO UNIVERSO
+                </p>
+
+                <h2>Dale play a otro mundo.</h2>
+
+                <p>
+                    Graves envolventes, almohadillas suaves y un
+                    acabado que brilla contigo. De tu playlist
+                    favorita a tus noches de juego: haz que cada
+                    momento suene a ti.
+                </p>
+
+                <a href="#detalles" class="enlace">
+                    Explora AuriWave ↓
+                </a>
+            </section>
+
+        </section>
+
+        <section class="detalles" id="detalles">
+            <p class="etiqueta">MÁS QUE UN ACCESORIO</p>
+
+            <h2>
+                Estética retro.
+                <span>Actitud inalámbrica.</span>
+            </h2>
+
+            <div class="caracteristicas">
+                <article>
+                    <p class="etiqueta">01 / SONIDO</p>
+                    <h3>Tu música, en primer plano.</h3>
+
+                    <p>
+                        Sumérgete en tus canciones con graves
+                        profundos y un sonido envolvente, ideal
+                        para acompañarte mientras estudias,
+                        juegas o descansas.
+                    </p>
+                </article>
+
+                <article>
+                    <p class="etiqueta">02 / COMODIDAD</p>
+                    <h3>Quédate un tema más.</h3>
+
+                    <p>
+                        Su diadema ajustable y sus almohadillas
+                        acolchadas se adaptan a ti para que
+                        disfrutes cada sesión con comodidad.
+                    </p>
+                </article>
+
+                <article>
+                    <p class="etiqueta">03 / DISEÑO</p>
+                    <h3>No pases desapercibido.</h3>
+
+                    <p>
+                        Celeste eléctrico, detalles plateados y
+                        una silueta retrofuturista inspirada en
+                        los mundos vaporwave y synthwave.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p class="marca">auri<span>wave</span></p>
+
+        <p>
+        </p>
+    </footer>
 </body>
 </html>

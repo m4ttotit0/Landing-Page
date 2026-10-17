@@ -189,3 +189,434 @@ body > .producto {
     position: relative;
     z-index: 1;
 }
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: #fff5ff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #83f9ff;
+    outline-offset: 5px;
+}
+
+.cabecera,
+main,
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+.cabecera {
+    max-width: 1450px;
+    margin: auto;
+    padding: 28px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.marca {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.marca span {
+    color: #83f9ff;
+}
+
+.cabecera nav {
+    display: flex;
+    gap: 28px;
+    font-size: 13px;
+}
+
+.cabecera nav a:hover {
+    color: #83f9ff;
+}
+
+.presentacion {
+    max-width: 1450px;
+    margin: auto;
+    padding: 20px 5% 70px;
+
+    display: grid;
+    grid-template-columns: 1fr 1.35fr 1fr;
+    grid-template-rows: 180px auto auto;
+    gap: 25px;
+}
+
+
+.titulo {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: center;
+}
+
+.titulo h1 {
+    margin: 15px 0;
+    font-size: clamp(38px, 4vw, 60px);
+    line-height: 1;
+    letter-spacing: -2px;
+    text-shadow: 0 2px 18px #25103d;
+}
+
+.titulo h1 span {
+    color: #ffb5ed;
+    font-style: italic;
+    text-shadow: 0 0 25px #ff78cc66;
+}
+
+.etiqueta {
+    color: #83f9ff;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    line-height: 1.7;
+}
+
+.titulo .etiqueta {
+    color: #fff5ff;
+    text-shadow: 0 1px 8px #25103d;
+}
+
+.panel {
+    padding: 25px;
+    min-width: 0;
+
+    background: linear-gradient(
+        130deg,
+        rgba(29, 15, 55, 0.9),
+        rgba(18, 12, 38, 0.75)
+    );
+
+    border: 1px solid #9b649c66;
+    border-radius: 3px 24px 3px 24px;
+
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 40px #05021044;
+}
+
+.panel h2 {
+    margin: 16px 0;
+    font-size: 28px;
+    line-height: 1.15;
+}
+
+.panel p:not(.etiqueta) {
+    color: #c4bad9;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.oferta {
+    grid-column: 1;
+    grid-row: 2 / 4;
+    align-self: center;
+    border-top: 2px solid #ff78cc;
+}
+
+.sello {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px;
+
+    color: #ff78cc;
+    border: 1px solid #ff78cc66;
+
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.precio {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 25px 0;
+}
+
+.precio strong {
+    font-size: 38px;
+    letter-spacing: -2px;
+}
+
+.precio span {
+    color: #c4bad9;
+    font-size: 12px;
+}
+
+.boton {
+    display: inline-block;
+    padding: 16px 22px;
+
+    background: #83f9ff;
+    color: #161029;
+
+    border: none;
+    border-radius: 3px;
+
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.boton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px #83f9ff66;
+}
+
+.oferta .boton {
+    display: block;
+    text-align: center;
+}
+
+.panel .nota {
+    font-size: 11px;
+}
+
+.producto {
+    grid-column: 2;
+    grid-row: 2 / 4;
+    align-self: center;
+    min-width: 0;
+}
+
+.audifonos-img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    filter: drop-shadow(0 15px 28px #58bbff55);
+}
+
+.datos {
+    grid-column: 3;
+    grid-row: 1 / 3;
+    align-self: center;
+    border-top: 2px solid #83f9ff;
+}
+
+.datos dl {
+    margin-bottom: 0;
+}
+
+.datos dl div {
+    padding: 15px 0;
+    border-top: 1px solid #ffffff22;
+}
+
+.datos dt {
+    color: #83f9ff;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.datos dd {
+    margin: 6px 0 0;
+    color: #c4bad9;
+    font-size: 13px;
+}
+
+.informacion {
+    grid-column: 3;
+    grid-row: 3;
+    align-self: start;
+}
+
+.informacion h2 {
+    font-size: 23px;
+}
+
+.enlace {
+    display: inline-block;
+    margin-top: 12px;
+    color: #ff78cc;
+    font-size: 13px;
+}
+
+
+.detalles {
+    padding: 70px 5%;
+    background: rgba(16, 9, 30, 0.95);
+    border-block: 1px solid #ff78cc44;
+}
+
+.detalles > h2 {
+    font-size: clamp(28px, 3vw, 44px);
+}
+
+.detalles > h2 span {
+    color: #ff78cc;
+}
+
+.caracteristicas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    margin-top: 40px;
+}
+
+.caracteristicas article {
+    padding-top: 20px;
+    border-top: 1px solid #a271af66;
+}
+
+.caracteristicas h3 {
+    font-size: 21px;
+}
+
+.caracteristicas article > p:last-child {
+    color: #c4bad9;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.compra {
+    width: 90%;
+    max-width: 1300px;
+    margin: 60px auto;
+    padding: 35px;
+
+    border: 1px solid #83f9ff66;
+    background: rgba(22, 11, 45, 0.9);
+}
+
+.compra h2 {
+    font-size: 30px;
+}
+
+.compra > p:not(.etiqueta) {
+    color: #c4bad9;
+    line-height: 1.7;
+}
+
+.compra .boton {
+    margin-top: 15px;
+}
+
+#mensaje-compra:empty {
+    display: none;
+}
+
+/* Pie de página */
+footer {
+    padding: 25px 5%;
+    background: #0b061a;
+    text-align: center;
+}
+
+footer > p:last-child {
+    color: #c4bad9;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    .cabecera nav {
+        gap: 15px;
+        font-size: 11px;
+    }
+
+    .presentacion {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .titulo,
+    .producto,
+    .oferta,
+    .datos,
+    .informacion {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .titulo {
+        order: 1;
+    }
+
+    .producto {
+        order: 2;
+    }
+
+    .oferta {
+        order: 3;
+    }
+
+    .datos {
+        order: 4;
+    }
+
+    .informacion {
+        order: 5;
+    }
+
+    .audifonos-img {
+        width: min(100%, 380px);
+    }
+
+    .caracteristicas {
+        grid-template-columns: 1fr;
+    }
+
+    .compra {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cabecera nav a:first-child {
+        display: none;
+    }
+
+    .marca {
+        font-size: 24px;
+    }
+
+    .titulo h1 {
+        font-size: 46px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .audifonos-img {
+        transform: none !important;
+        opacity: 1 !important;
+    }
+}
