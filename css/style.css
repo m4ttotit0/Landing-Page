@@ -786,3 +786,136 @@ footer > p:last-child {
         right: -100px;
     }
 }
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .auto {
+        width: 280px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    .auto {
+        width: 200px;
+    }
+}
+
+
+/* Base de las nubes */
+.nubes {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Forma y franjas de las nubes */
+.nube-lineal {
+    position: absolute;
+    width: 350px;
+    height: 100px;
+    pointer-events: none;
+    z-index: 1;
+
+    background: repeating-linear-gradient(
+        to bottom,
+        var(--color-nube) 0px,
+        var(--color-nube) 2px,
+        transparent 2px,
+        transparent 7px
+    );
+
+    clip-path: polygon(
+        0% 35%,
+        12% 35%,
+        12% 25%,
+        25% 25%,
+        25% 15%,
+        40% 15%,
+        40% 5%,
+        60% 5%,
+        60% 15%,
+        78% 15%,
+        78% 25%,
+        90% 25%,
+        90% 35%,
+        100% 35%,
+        100% 65%,
+        85% 65%,
+        85% 75%,
+        65% 75%,
+        65% 85%,
+        35% 85%,
+        35% 75%,
+        15% 75%,
+        15% 65%,
+        0% 65%
+    );
+}
+
+/* Nube violeta superior izquierda */
+.nube-violeta {
+    --color-nube: rgba(190, 145, 255, 0.45);
+    top: 8%;
+    left: 12%;
+}
+
+/* Nube rosada derecha */
+.nube-rosada {
+    --color-nube: rgba(255, 125, 200, 0.5);
+    top: 30%;
+    right: 12%;
+}
+
+/* Nube adicional izquierda */
+.nube-extra-izquierda {
+    --color-nube: rgba(255, 125, 200, 0.4);
+    width: 200px;
+    height: 65px;
+    top: 22%;
+    left: 28%;
+}
+
+/* Nube adicional derecha */
+.nube-extra-derecha {
+    --color-nube: rgba(190, 145, 255, 0.4);
+    width: 230px;
+    height: 70px;
+    top: 15%;
+    right: 28%;
+}
+
+/* Ajustes para celulares */
+@media (max-width: 600px) {
+    .nube-lineal {
+        width: 130px;
+        height: 48px;
+    }
+
+    .nube-violeta {
+        top: 10%;
+        left: 8%;
+    }
+
+    .nube-rosada {
+        top: 28%;
+        right: 8%;
+    }
+
+    .nube-extra-izquierda {
+        width: 100px;
+        height: 40px;
+        top: 22%;
+        left: 20%;
+    }
+
+    .nube-extra-derecha {
+        width: 110px;
+        height: 42px;
+        top: 17%;
+        right: 20%;
+    }
+}
