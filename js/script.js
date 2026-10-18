@@ -36,3 +36,28 @@ window.addEventListener("scroll", () => {
 		audifonos.style.opacity = opacidad;
     }
 });
+
+const auto = document.querySelector(".auto");
+
+if (auto) {
+    let movimientoX = 0;
+    let movimientoY = 0;
+
+    document.addEventListener("mousemove", (evento) => {
+        // Posición horizontal del mouse entre -1 y 1
+        const posicionX =
+            (evento.clientX / window.innerWidth - 0.5) * 2;
+
+        // Posición vertical del mouse entre -1 y 1
+        const posicionY =
+            (evento.clientY / window.innerHeight - 0.5) * 2;
+
+        // Movimiento limitado
+        movimientoX = posicionX * 100;
+        movimientoY = posicionY * 8;
+
+        // Aplicamos el desplazamiento
+        auto.style.transform =
+            `translate(calc(-50% + ${movimientoX}px), ${movimientoY}px)`;
+    });
+}

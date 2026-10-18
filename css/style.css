@@ -620,3 +620,169 @@ footer > p:last-child {
         opacity: 1 !important;
     }
 }
+.palmera {
+    position: absolute;
+    bottom: 0;
+    width: 600px;
+    transform-origin: bottom center;
+    animation: balanceo 4s ease-in-out infinite alternate;
+}
+
+.palmera img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.palmera-izquierda {
+    left: -50px;
+}
+
+.palmera-izquierda img {
+    transform: scaleX(-1);
+}
+
+.palmera-derecha {
+    right: -50px;
+    animation-name: balanceoInvertido;
+}
+
+.palmera-derecha img {
+    transform: scaleX(1);
+}
+@keyframes balanceo {
+    from { transform: rotate(-3deg); }
+    to { transform: rotate(3deg); }
+}
+
+@keyframes balanceoInvertido {
+    from { transform: rotate(-3deg); }
+    to { transform: rotate(3deg); }
+}
+/* Palmeras del primer plano */
+.palmera-interior-izquierda {
+    left: -200px;
+    bottom: -30px;
+    width: 700px;
+    z-index: 4;
+}
+
+.palmera-interior-derecha {
+    right: -200px;
+    bottom: -30px;
+    width: 700px;
+    z-index: 4;
+}
+
+.palmera-interior-izquierda img {
+    transform: scaleX(-1);
+}
+
+.palmera-interior-derecha img {
+    transform: scaleX(1);
+}
+
+
+.auto {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    width: 350px;
+
+    /* Lo centra horizontalmente */
+    transform: translateX(-50%);
+
+    /* Se dibuja delante de la cuadrícula */
+    z-index: 3;
+
+    /* Movimiento suave */
+    transition: transform 0.15s ease-out;
+
+    pointer-events: none;
+}
+
+.auto img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    /* Brillo azul y morado */
+    filter:
+        drop-shadow(0 0 10px rgba(0, 220, 255, 0.65))
+        drop-shadow(0 0 25px rgba(160, 40, 255, 0.45));
+}
+/* Balanceo vertical del auto */
+.auto img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    filter:
+        drop-shadow(0 0 10px rgba(0, 220, 255, 0.65))
+        drop-shadow(0 0 25px rgba(160, 40, 255, 0.45));
+    animation: balanceoAuto 1s ease-in-out infinite alternate;
+    transform-origin: center bottom;
+}
+
+@keyframes balanceoAuto {
+    from {
+        transform: translateY(-10px) rotate(-1deg);
+    }
+
+    to {
+        transform: translateY(10px) rotate(1deg);
+    }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .retro-bg .palmera-interior-izquierda {
+        width: 300px;
+        left: -180px;
+        right: auto;
+    }
+
+    .retro-bg .palmera-interior-derecha {
+        width: 300px;
+        right: -180px;
+        left: auto;
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    .retro-bg .palmera-interior-izquierda {
+        width: 180px;
+        left: -100px;
+        right: auto;
+    }
+
+    .retro-bg .palmera-interior-derecha {
+        width: 180px;
+        right: -100px;
+        left: auto;
+    }
+}
+/* Tablets: palmeras originales */
+@media (max-width: 1024px) {
+    .palmera-izquierda {
+        left: -100px;
+    }
+
+    .palmera-derecha {
+        right: -100px;
+    }
+}
+
+/* Celulares: palmeras originales */
+@media (max-width: 600px) {
+    .palmera-izquierda {
+        width: 220px;
+        left: -100px;
+    }
+
+    .palmera-derecha {
+        width: 220px;
+        right: -100px;
+    }
+}
